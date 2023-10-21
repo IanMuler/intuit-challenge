@@ -61,12 +61,17 @@ const DateSelector = ({ url, name }: DataSelectorProps) => {
           <LoadingSpinner />
         ) : (
           <>
-            {error && <p>{error}</p>}
-            {historicalWeather && (
-              <DayCard
-                date={selectedDate}
-                day={historicalWeather.forecast.forecastday[0].day}
-              />
+            {error ? (
+              <p className={styles.error}>{error}</p>
+            ) : (
+              <>
+                {historicalWeather && (
+                  <DayCard
+                    date={selectedDate}
+                    day={historicalWeather.forecast.forecastday[0].day}
+                  />
+                )}
+              </>
             )}
           </>
         )}
