@@ -13,30 +13,25 @@ interface WeatherDetailsProps {
 
 const WeatherDetails = ({ url }: WeatherDetailsProps) => {
   const [weatherData, setWeatherData] = useState<WeatherForecast | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
-  const isInitialMount = useRef(true); // to avoid useEffect on first render
 
   const DAYS_FORECAST = 6; // today + 5 days
 
   useEffect(() => {
-    if (isInitialMount.current) {
-      isInitialMount.current = false;
-    } else {
-      const fetchData = async () => {
-        setLoading(true);
-        setError(null);
-        try {
-          const data = await getWeatherForecast(url, DAYS_FORECAST);
-          setWeatherData(data);
-        } catch (err) {
-          setError("Error fetching weather details. Please try again.");
-        } finally {
-          setLoading(false);
-        }
-      };
-      fetchData();
-    }
+    const fetchData = async () => {
+      setLoading(true);
+      setError(null);
+      try {
+        const data = await getWeatherForecast(url, DAYS_FORECAST);
+        setWeatherData(data);
+      } catch (err) {
+        setError("Error fetching weather details. Please try again.");
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
   }, [url]);
 
   if (loading) return <LoadingSpinner />;

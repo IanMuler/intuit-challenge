@@ -75,9 +75,6 @@ const CitySearch = ({ onSelect }: CitySearchProps) => {
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     switch (e.key) {
       case "Enter":
-        if (searchTimeoutRef.current) {
-          clearTimeout(searchTimeoutRef.current);
-        }
         if (selectedIndex !== null && cities[selectedIndex]) {
           handleSelect(cities[selectedIndex]);
         }
