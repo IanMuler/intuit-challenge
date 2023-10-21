@@ -8,6 +8,16 @@ Para el manejo de estilos se utilizaron **CSS Modules**. <br>
 
 Demo: [https://intuit-challenge-ianmuler.vercel.app/](https://intuit-challenge-ianmuler.vercel.app/)
 
+## Índice
+
+- [Características](#características)
+  - [Buscador de Ciudades](#buscador-de-ciudades)
+  - [Datos del Clima](#datos-del-clima)
+  - [Búsqueda Histórica](#búsqueda-histórica)
+- [Mejoras y Extras](#mejoras-y-extras)
+- [Cómo correr el proyecto](#cómo-correr-el-proyecto)
+
+  
 ## **Características**
 
 ### **Buscador de Ciudades**
