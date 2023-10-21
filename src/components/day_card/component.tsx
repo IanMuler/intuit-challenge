@@ -39,7 +39,7 @@ const DayCard = ({ location, date, day }: DayCardProps) => {
       {date && <p className={styles.date}>{date}</p>}
       <Image
         className={styles.image}
-        src={`http:${image_src}`}
+        src={`https:${image_src}`}
         alt={image_alt}
         width={64}
         height={64}

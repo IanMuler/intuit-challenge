@@ -1,6 +1,6 @@
 import { City, HistoricalWeather, WeatherForecast } from "./types";
 
-const API_URL = "http://api.weatherapi.com/v1";
+const API_URL = "https://api.weatherapi.com/v1";
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
 
 export async function searchCities(query: string): Promise<City[]> {
